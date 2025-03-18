@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h2>Customer Registration Form</h2>
+<form action="/submit" method="post">
+    <label>Title:</label>
+    <input type="text" name="title" maxlength="5" required><br><br>
+
+    <label>First Name:</label>
+    <input type="text" name="first_name" maxlength="50" required><br><br>
+
+    <label>Last Name:</label>
+    <input type="text" name="last_name" maxlength="50" required><br><br>
+
+    <label>Email Address:</label>
+    <input type="email" name="email_address" maxlength="255" required><br><br>
+
+    <label>Address Line 1:</label>
+    <input type="text" name="address_line_1" maxlength="255" required><br><br>
+
+    <label>Address Line 2:</label>
+    <input type="text" name="address_line_2" maxlength="255"><br><br>
+
+    <label>City:</label>
+    <input type="text" name="city" maxlength="255"><br><br>
+
+    <label>Postcode:</label>
+    <input type="text" name="postcode" maxlength="10" required><br><br>
+
+    <label>Phone Number:</label>
+    <input type="tel" name="phone_number" maxlength="20"><br><br>
+
+    <button type="submit">Register</button>
+</form>
+</body>
+</html>
