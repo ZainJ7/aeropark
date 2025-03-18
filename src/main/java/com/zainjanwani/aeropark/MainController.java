@@ -16,10 +16,18 @@ public class MainController {
     public String addNewCustomer(Customer customer, Model model) {
         String email = customer.getEmail_address().toLowerCase(Locale.ROOT);
         customer.setEmail_address(email);
+
+        String errors = Validation.validateCustomer(customer);
+        if (!errors.isEmpty()) {
+            model.addAttribute("error", String.format("The following fields are required: %s", errors));
+            return "error";
+        }
+
         if (customerRepository.existsByEmail(email)) {
             model.addAttribute("error", "A customer already exists with this email");
             return "error";
         }
+
         customerRepository.save(customer);
         model.addAttribute("name", customer.getFirst_name());
         return "success";
